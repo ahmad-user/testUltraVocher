@@ -15,8 +15,8 @@ function PanggilAnagram(a) {
     return [...nilaiAwal.values()];
   }
   
-  let arr = ['cook', 'save', 'taste', 'aves', 'vase', 'state', 'map'];
-  console.log(PanggilAnagram(arr));
+  let data = ['cook', 'save', 'taste', 'aves', 'vase', 'state', 'map'];
+  console.log(PanggilAnagram(data));
 
 
 Soal no 2;
@@ -29,7 +29,7 @@ insert into users values
 	(2,'ILham',null),
 	(3,'Irwan',2),
 	(4,'Arka',3);
-alter table users drop parent_name;
+alter table users drop parent_id;
 alter table users add parent_name varchar(100);
 update users set parent_name = 'ilham' where id = 1;
 update users set parent_name = '' where id = 2;
