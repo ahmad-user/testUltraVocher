@@ -1,0 +1,39 @@
+Soal no 1;
+
+function PanggilAnagram(a) {
+    let nilaiAwal = new Map();
+    for (let awal of a) {
+      let charCount = new Map();
+      for (let char of awal) {
+        charCount.set(char, (charCount.get(char) || 0) + 1);
+      }
+      let nilai = JSON.stringify([...charCount.entries()].sort());
+      let hasil = nilaiAwal.get(nilai) || [];
+      hasil.push(awal);
+      nilaiAwal.set(nilai, hasil);
+    }
+    return [...nilaiAwal.values()];
+  }
+  
+  let arr = ['cook', 'save', 'taste', 'aves', 'vase', 'state', 'map'];
+  console.log(PanggilAnagram(arr));
+
+
+Soal no 2;
+
+select * from users;
+drop table users;
+create table users(id int, name varchar(100),parent_id int);
+insert into users values
+	(1,'Zaki',2),
+	(2,'ILham',null),
+	(3,'Irwan',2),
+	(4,'Arka',3);
+alter table users drop parent_name;
+alter table users add parent_name varchar(100);
+update users set parent_name = 'ilham' where id = 1;
+update users set parent_name = '' where id = 2;
+update users set parent_name = 'ilham' where id = 3;
+update users set parent_name = 'irwan' where id = 4;
+select * from users order by id asc;
+
